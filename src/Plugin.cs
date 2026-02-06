@@ -7,6 +7,7 @@ using static SlugBase.Features.FeatureTypes;
 namespace SlugTemplate
 {
     [BepInPlugin(MOD_ID, "Slugcat Template", "0.1.0")]
+    [BepInDependency("slime-cubed.slugbase")]
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "author.slugtemplate";
