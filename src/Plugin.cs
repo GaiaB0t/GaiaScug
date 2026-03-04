@@ -6,15 +6,15 @@ using static SlugBase.Features.FeatureTypes;
 
 namespace SlugTemplate
 {
-    [BepInPlugin(MOD_ID, "Slugcat Template", "0.1.0")]
+    [BepInPlugin(MOD_ID, "Gaia Slugcat Real", "0.1.0")]
     [BepInDependency("slime-cubed.slugbase")]
     class Plugin : BaseUnityPlugin
     {
-        private const string MOD_ID = "author.slugtemplate";
+        private const string MOD_ID = "Gaia.GaiaScug";
 
-        public static readonly PlayerFeature<float> SuperJump = PlayerFloat("slugtemplate/super_jump");
-        public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("slugtemplate/explode_on_death");
-        public static readonly GameFeature<float> MeanLizards = GameFloat("slugtemplate/mean_lizards");
+        public static readonly PlayerFeature<float> SuperJump = PlayerFloat("GaiaScug/super_jump");
+        public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("GaiaScug/explode_on_death");
+        public static readonly GameFeature<float> MeanLizards = GameFloat("GaiaScug/mean_lizards");
 
 
         // Add hooks
