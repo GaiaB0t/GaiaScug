@@ -43,6 +43,21 @@
 			"retract_speed": 1
 		},
 		"body_warmth": 0.6,
+		"Can_maul": True,
+		"maul_damage": 1.5,
+		"maul_blacklist":["PinkLizard", 
+			"GreenLizard", 
+			"BlueLizard", 
+			"YellowLizard", 
+			"WhiteLizard", 
+			"RedLizard", 
+			"BlackLizard", 
+			"Salamander", 
+			"CyanLizard", 
+			"TrainLizard", 
+			"SpitLizard", 
+			"EelLizard", 
+			"ZoopLizard" ],
 
 		"select_menu_scene": "Slugcat_Gaia",
 
