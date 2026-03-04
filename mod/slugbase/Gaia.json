@@ -42,9 +42,9 @@
 			"segments": 20,
 			"retract_speed": 1
 		},
+		"body_warmth": 0.6,
 
 		"select_menu_scene": "Slugcat_Gaia",
-		"select_menu_scene_ascended": "Ghost_Gaia",
 
 	}
 }
