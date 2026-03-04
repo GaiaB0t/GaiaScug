@@ -4,7 +4,7 @@
 	"version": "0.1.2",
 	"authors": "Gaia",
 	"description": "adding myself to the game maybe",
-	"requirements": [ "slime-cubed.slugbase", "dressmyslugcat" ],
-	"requirements_names": [ "SlugBase", "Dress My Slugcat" ],
+	"requirements": [ "slime-cubed.slugbase", "dressmyslugcat", "magica.extendedslugbasefeatures", "moreslugcats" ],
+	"requirements_names": [ "SlugBase", "Dress My Slugcat", "Extended Slugbase Features", "More Slugcats Expansion" ],
 	"tags": [ "Custom Slugcat", "Cosmetics" ]
 }

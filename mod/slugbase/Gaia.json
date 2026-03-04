@@ -7,7 +7,7 @@
 		"custom_colors": [
 			{ "name": "Body", "story": "2e2e2d" },
 			{ "name": "Eyes", "story": "006f3e" },
-			{ "name": "Tongue", "story":"006f3e"}
+			{ "name": "grapple_tongue", "story":"006f3e"}
 		],
 		"alignments": {
 			"Lizards": { "like": 1.0, "strength": 0.75 },
@@ -35,7 +35,16 @@
 			"ZoopLizard":0.2,
 		  }
 		},
+		"grapple_tongue": {
+			"retract_lengths": [ 50, 170 ],
+			"retractable": true,
+			"length": 150,
+			"segments": 20,
+			"retract_speed": 1
+		},
+
 		"select_menu_scene": "Slugcat_Gaia",
 		"select_menu_scene_ascended": "Ghost_Gaia",
+
 	}
 }
