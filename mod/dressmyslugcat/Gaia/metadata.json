@@ -1,0 +1,31 @@
+{
+  "id": "dressmyslugcat.Gaia",
+  "name": "Gaia",
+  "author": "Gaia"
+    "defaults": {
+        "HEAD": {
+            "Color": "#FCFCFC"
+        },
+        "EYES":{
+            "Color":"#006F3E"
+        },
+        "ARMS": {
+            "Color": "#FCFCFC"
+        },
+        "BODY": {
+            "Color": "#FCFCFC"
+        },
+        "HIPS": {
+            "Color": "#FCFCFC"
+        },
+        "LEGS": {
+            "Color": "#FCFCFC"
+        },
+        "TAIL": {
+            "Color": "#FCFCFC"
+        },
+        "FACE": {
+            "Color": "#FCFCFC"
+        }
+    }
+}

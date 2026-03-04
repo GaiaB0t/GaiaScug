@@ -4,11 +4,38 @@
 	"description": "Multicolored fluffscug that goes by the name Gaia",
 	"features": {
 		"color": "2e2e2d",
-		"GaiaScug/super_jump": 0.5,
-		"GaiaScug/explode_on_death": true,
-		
+		"custom_colors": [
+			{ "name": "Body", "story": "2e2e2d" },
+			{ "name": "Eyes", "story": "006f3e" },
+			{ "name": "Tongue", "story":"006f3e"}
+		],
+		"alignments": {
+			"Lizards": { "like": 1.0, "strength": 0.75 },
+		},
+		"diet": {
+		  "base": "Gourmand",
+		  "overrides": {
+			"Centipede":1.50,
+			"SmallCentipede":1.50,
+			"RedCentipede":1.50,
+			"Centiwing":1.50,
+			"AquaCenti":1.50,
+			"PinkLizard":0.2,
+			"GreenLizard":0.2,
+			"BlueLizard":0.2,
+			"YellowLizard":0.2,
+			"WhiteLizard":0.2,
+			"RedLizard":0.2,
+			"BlackLizard":0.2,
+			"Salamander":0.2,
+			"CyanLizard":0.2,
+			"TrainLizard":0.2,
+			"SpitLizard":0.2,
+			"EelLizard":0.2,
+			"ZoopLizard":0.2,
+		  }
+		},
 		"select_menu_scene": "Slugcat_Gaia",
 		"select_menu_scene_ascended": "Ghost_Gaia",
-		"GaiaScug/mean_lizards": 0.1
 	}
 }
