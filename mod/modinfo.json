@@ -1,7 +1,7 @@
 ﻿{
 	"id": "Gaia.GaiaScug",
-	"name": "Gaia the Scug Real",
-	"version": "0.1.2",
+	"name": "Gaia the Scug",
+	"version": "1.5.1",
 	"authors": "Gaia",
 	"description": "adding myself to the game maybe",
 	"requirements": [ "slime-cubed.slugbase", "dressmyslugcat", "magica.extendedslugbasefeatures", "moreslugcats" ],
