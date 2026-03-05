@@ -5,16 +5,16 @@ using SlugBase.Features;
 using static SlugBase.Features.FeatureTypes;
 
 namespace SlugTemplate
+    //none of this does anything right now I think so dont worry about this file 
+
+
 {
-    [BepInPlugin(MOD_ID, "Gaia Slugcat Real", "0.1.0")]
+
+    [BepInPlugin(MOD_ID, "Gaia Slugcat Real", "1.5.1")]
     [BepInDependency("slime-cubed.slugbase")]
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "Gaia.GaiaScug";
-
-     //   public static readonly PlayerFeature<float> SuperJump = PlayerFloat("GaiaScug/super_jump");
-     //   public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("GaiaScug/explode_on_death");
-
 
         // Add hooks
         public void OnEnable()
