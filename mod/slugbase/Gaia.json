@@ -24,7 +24,14 @@
                 "locked": true
             }
         },
+        "can_pass_OE_gate": true,
         "throw_skill": 1,
+        "weight": 1.1,
+        "climb_speed": 1.25,
+        "walk_speed": 1.25,
+        "the_mark": true,
+        "take_spears_from_wall": true,
+
 
         "diet": {
             "base": "Gourmand",
@@ -83,6 +90,7 @@
         "food_min": 6,
         "food_max": 10,
         "select_menu_scene": "Slugcat_Gaia"
+        "sleep_scene": "GaiaSleep"
 
     }
 }
