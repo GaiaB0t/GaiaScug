@@ -89,7 +89,7 @@
         "timeline_after": "Gourmand",
         "food_min": 6,
         "food_max": 10,
-        "select_menu_scene": "Slugcat_Gaia"
+        "select_menu_scene": "Slugcat_Gaia",
         "sleep_scene": "GaiaSleep"
 
     }
