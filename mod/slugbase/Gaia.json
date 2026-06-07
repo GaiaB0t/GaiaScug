@@ -24,6 +24,14 @@
                 "locked": true
             }
         },
+        "grab_overrides": {
+            "Centipede": "Drag",
+            "RedCentipede": "Drag",
+            "Centiwing": "OneHand",
+            "AquaCenti": "Drag"
+        },
+
+
         "can_pass_OE_gate": true,
         "throw_skill": 1,
         "weight": 1.1,
