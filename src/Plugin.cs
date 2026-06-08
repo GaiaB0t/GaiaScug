@@ -1,12 +1,6 @@
 ﻿using BepInEx;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using SlugBase.Features;
-using System;
-using UnityEngine;
 using MoreSlugcats;
-using RWCustom;
-using static SlugBase.Features.FeatureTypes;
 
 namespace Gaia
 {
@@ -24,20 +18,31 @@ namespace Gaia
             On.RainWorld.OnModsInit += Extras.WrapInit(LoadResources);
 
             // Put your custom hooks here!
-            On.PlacedObject.FilterData.FromString += FilterData_FromString_TimelineFix;
+            On.PlacedObject.FilterData.RefreshTimelineList += FilterData_RefreshTimelineList_TimelineFix;
+            // On.PlacedObject.FilterData.Active += FilterData_Active;
+            // On.Player.IsCreatureLegalToHoldWithoutStun += Player_IsCreatureLegalToHoldWithoutStun_Centi;
 
 
         }
-        public const string GaiaID = "Gaia"; // whatever it's supposed to be
+        // private bool FilterData_Active(On.PlacedObject.FilterData.orig_Active orig, PlacedObject.FilterData self, RoomSettings roomSettings, SlugcatStats.Timeline timelinePoint)
+        // {
+        //    Logger.LogDebug($"The current timeline is {timelinePoint}, while the allowed timelines are [{string.Join(",", self.availableOnTimelines)}]. Should the filter in {roomSettings.room.abstractRoom.name} : {self.handlePos} allow this ? {orig(self,roomSettings,timelinePoint)}");
+        //
+        //    return orig(self,roomSettings,timelinePoint);
+        // }
+        
+        public const string GaiaID = "Gaia"; 
         public static SlugcatStats.Name GaiaEnumName {get; private set;} // making it somewhat read only but not really
-        private static void FilterData_FromString_TimelineFix(On.PlacedObject.FilterData.orig_FromString orig, PlacedObject.FilterData self, string s)
+        private static void FilterData_RefreshTimelineList_TimelineFix(On.PlacedObject.FilterData.orig_RefreshTimelineList orig, PlacedObject.FilterData self)
         {
-            orig(self, s);
-    
-            if (!self.availableToPlayers.Contains(MoreSlugcatsEnums.SlugcatStatsName.Gourmand) && self.availableToPlayers.Contains(GaiaEnumName))
+            // removing Gaia's enum name off the list...
+            if (self.availableToPlayers.Contains(GaiaEnumName)) // (Also, this doesn't need more check, if you're going to fully use the Gourmand's timeline. Let's just remove Gaia if it's there)
             {
-                self.availableToPlayers.Remove(GaiaEnumName); 
+                self.availableToPlayers.Remove(GaiaEnumName);
             }
+    
+            // ...before calling the function itself !
+            orig(self);
         }
         
         // Load any resources, such as sprites or sounds
