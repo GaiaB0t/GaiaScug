@@ -77,7 +77,7 @@
         },
         "body_warmth": 0.6,
         "can_maul": true,
-        "maul_damage": 1.5,
+        "maul_damage": 2,
         "maul_blacklist": [
             "PinkLizard",
             "GreenLizard",

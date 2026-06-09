@@ -1,6 +1,6 @@
 ﻿using BepInEx;
-using SlugBase.Features;
-using MoreSlugcats;
+//using SlugBase.Features;
+//using MoreSlugcats;
 
 namespace Gaia
 {
@@ -20,7 +20,7 @@ namespace Gaia
             // Put your custom hooks here!
             On.PlacedObject.FilterData.RefreshTimelineList += FilterData_RefreshTimelineList_TimelineFix;
             // On.PlacedObject.FilterData.Active += FilterData_Active;
-            // On.Player.IsCreatureLegalToHoldWithoutStun += Player_IsCreatureLegalToHoldWithoutStun_Centi;
+            On.Player.IsCreatureLegalToHoldWithoutStun += Player_IsCreatureLegalToHoldWithoutStun;
 
 
         }
@@ -30,9 +30,20 @@ namespace Gaia
         //
         //    return orig(self,roomSettings,timelinePoint);
         // }
-        
         public const string GaiaID = "Gaia"; 
         public static SlugcatStats.Name GaiaEnumName {get; private set;} // making it somewhat read only but not really
+        private bool Player_IsCreatureLegalToHoldWithoutStun(On.Player.orig_IsCreatureLegalToHoldWithoutStun orig, Player self, Creature grabCheck) // is this right?
+        {
+            if (self.SlugCatClass.value == GaiaID) 
+            {
+                if (grabCheck is Centipede)
+                {
+                    return true;
+                }
+            }
+
+            return orig(self, grabCheck);
+        }
         private static void FilterData_RefreshTimelineList_TimelineFix(On.PlacedObject.FilterData.orig_RefreshTimelineList orig, PlacedObject.FilterData self)
         {
             // removing Gaia's enum name off the list...
@@ -44,6 +55,7 @@ namespace Gaia
             // ...before calling the function itself !
             orig(self);
         }
+        
         
         // Load any resources, such as sprites or sounds
         private void LoadResources(RainWorld rainWorld)
