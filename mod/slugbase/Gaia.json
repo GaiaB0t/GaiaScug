@@ -2,9 +2,11 @@
   "id": "Gaia",
   "name": "Gaia",
   "description": "Multicolored furred slugcat that's a friend to all lizards, and a skilled hunter of centipedes",
-    "features": {
+    "features": 
+    {
         "color": "2e2e2d",
-        "custom_colors": [
+        "custom_colors": 
+        [
             {
                 "name": "Body",
                 "story": "2e2e2d"
@@ -18,13 +20,16 @@
                 "story": "006f3e"
             }
         ],
-        "alignments": {
-            "Lizards": {
+        "alignments": 
+        {
+            "Lizards": 
+            {
                 "like": 1.0,
                 "locked": true
             }
         },
-        "grab_overrides": {
+        "grab_overrides": 
+        {
             "Centipede": "Drag",
             "RedCentipede": "Drag",
             "Centiwing": "OneHand",
@@ -41,9 +46,11 @@
         "take_spears_from_wall": true,
 
 
-        "diet": {
+        "diet": 
+        {
             "base": "Gourmand",
-            "overrides": {
+            "overrides": 
+            {
                 "Centipede": 1.50,
                 "SmallCentipede": 1.50,
                 "RedCentipede": 1.50,
@@ -65,8 +72,10 @@
 
             }
         },
-        "grapple_tongue": {
-            "retract_lengths": [
+        "grapple_tongue": 
+        {
+            "retract_lengths": 
+            [
                 50,
                 170
             ],
@@ -77,8 +86,9 @@
         },
         "body_warmth": 0.6,
         "can_maul": true,
-        "maul_damage": 2,
-        "maul_blacklist": [
+        "maul_damage": 1.5,
+        "maul_blacklist": 
+        [
             "PinkLizard",
             "GreenLizard",
             "BlueLizard",
@@ -93,6 +103,7 @@
             "EelLizard",
             "ZoopLizard"
         ],
+        "Gaia/CentiMaulMultiplier": 5,
         "world_state": "Gourmand",
         "timeline_after": "Gourmand",
         "food_min": 6,

@@ -1,6 +1,12 @@
 ﻿using BepInEx;
-//using SlugBase.Features;
-//using MoreSlugcats;
+using UnityEngine;
+using SlugBase.Features;
+using MoreSlugcats;
+using MonoMod.Cil;
+using System;
+using Mono.Cecil.Cil;
+using static SlugBase.Features.FeatureTypes;
+
 
 namespace Gaia
 {
@@ -10,7 +16,7 @@ namespace Gaia
     class Plugin : BaseUnityPlugin
     {
         private const string MOD_ID = "Gaia.GaiaScug";
-
+         
 
         // Add hooks
         public void OnEnable()
@@ -21,9 +27,48 @@ namespace Gaia
             On.PlacedObject.FilterData.RefreshTimelineList += FilterData_RefreshTimelineList_TimelineFix;
             // On.PlacedObject.FilterData.Active += FilterData_Active;
             On.Player.IsCreatureLegalToHoldWithoutStun += Player_IsCreatureLegalToHoldWithoutStun;
-
+            IL.Player.GrabUpdate += Player_GrabUpdate_MaulDamage;
+            
 
         }
+
+        static readonly PlayerFeature<float> CentiMaulMulti = PlayerFloat("Gaia/CentiMaulMultiplier"); //this doesnt do anything yet 
+        private static float ChangeMaulDamage(float originalDmg, Player self, Creature mauledCreature)
+        {
+            if (self.SlugCatClass.value == GaiaID  && mauledCreature is Centipede) 
+            {
+                return (originalDmg * 5); //temporarily hardcoded
+            }
+            else
+            {
+                return originalDmg;
+            }
+        }
+        private void Player_GrabUpdate_MaulDamage(ILContext il)
+        {
+            Logger.LogDebug("IL hook 1 starts");
+            try
+            {
+                Logger.LogDebug("Trying to hook IL");
+                ILCursor cursor = new(il);
+                cursor.GotoNext(MoveType.Before, x => x.MatchCallvirt<Creature>(nameof(Creature.Violence)));
+                cursor.GotoPrev(MoveType.After, x => x.MatchLdcR4(1f));
+                cursor.Emit(OpCodes.Ldarg_0);
+                cursor.Emit(OpCodes.Ldloc, 29);
+                cursor.EmitDelegate(ChangeMaulDamage);
+                
+                
+                Logger.LogDebug("IL hook ended");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex);
+            }
+            Logger.LogDebug("IL hook 1 ends");
+        }
+        
+        
+        
         // private bool FilterData_Active(On.PlacedObject.FilterData.orig_Active orig, PlacedObject.FilterData self, RoomSettings roomSettings, SlugcatStats.Timeline timelinePoint)
         // {
         //    Logger.LogDebug($"The current timeline is {timelinePoint}, while the allowed timelines are [{string.Join(",", self.availableOnTimelines)}]. Should the filter in {roomSettings.room.abstractRoom.name} : {self.handlePos} allow this ? {orig(self,roomSettings,timelinePoint)}");

@@ -2,8 +2,9 @@
 
 Hi this scug is for me and is by me so ask if you want to use it please
 
-discord: gaiabot
+Big thanks to the people over at the Rain World Modding server for helping me on this!(especially one of you, you know who you are)
 
+discord: gaiabot
 
 The DMS sprites are still WIP!!
 
