@@ -31,13 +31,13 @@ namespace Gaia
             
 
         }
-
-        static readonly PlayerFeature<float> CentiMaulMulti = PlayerFloat("Gaia/CentiMaulMultiplier"); //this doesnt do anything yet 
+        //adding useless something maybe it'll accept
+        static readonly PlayerFeature<float> CentiMaulMulti = PlayerFloat("Gaia/CentiMaulMultiplier"); 
         private static float ChangeMaulDamage(float originalDmg, Player self, Creature mauledCreature)
         {
-            if (self.SlugCatClass.value == GaiaID  && mauledCreature is Centipede) 
+            if (self.SlugCatClass.value == GaiaID  && mauledCreature is Centipede && CentiMaulMulti.TryGet(self, out var mult))
             {
-                return (originalDmg * 5); //temporarily hardcoded
+                return (originalDmg * mult); 
             }
             else
             {
