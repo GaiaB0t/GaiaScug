@@ -106,8 +106,8 @@
         "Gaia/CentiMaulMultiplier": 5,
         "world_state": "Gourmand",
         "timeline_after": "Gourmand",
-        "food_min": 6,
-        "food_max": 10,
+        "food_min": 10,
+        "food_max": 18,
         "select_menu_scene": "Slugcat_Gaia",
         "sleep_scene": "GaiaSleep"
 
