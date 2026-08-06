@@ -31,7 +31,7 @@ namespace Gaia
             
 
         }
-        //adding useless something maybe it'll accept
+        
         static readonly PlayerFeature<float> CentiMaulMulti = PlayerFloat("Gaia/CentiMaulMultiplier"); 
         private static float ChangeMaulDamage(float originalDmg, Player self, Creature mauledCreature)
         {
